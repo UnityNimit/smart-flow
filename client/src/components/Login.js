@@ -8,7 +8,7 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await axios.post('http://localhost:5000/api/login', { username, password });
+        const response = await axios.post('https://smart-flow-76uj.onrender.com', { username, password });
         localStorage.setItem('token', response.data.token);
         alert('User  logged in');
     };
