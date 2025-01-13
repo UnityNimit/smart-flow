@@ -8,9 +8,14 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await axios.post('https://smart-flow-76uj.onrender.com/api/login', { username, password });
-        localStorage.setItem('token', response.data.token);
-        alert('User  logged in');
+        try {
+            const response = await axios.post('https://smart-flow-76uj.onrender.com/api/login', { username, password });
+            localStorage.setItem('token', response.data.token);
+            alert('User  logged in');
+        } catch (error) {
+            console.error('Login error:', error);
+            alert('Login failed: ' + (error.response ? error.response.data : error.message));
+        }
     };
 
     return (
