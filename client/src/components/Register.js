@@ -8,7 +8,7 @@ const Register = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await axios.post('https://smart-flow-76uj.onrender.com', { username, password });
+        await axios.post('https://smart-flow-76uj.onrender.com/api/login', { username, password });
         alert('User  registered');
     };
 
